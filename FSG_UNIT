@@ -1,0 +1,29 @@
+module FSG_UNIT(
+input [15:0]A,
+input [15:0]B,
+input Cin,
+output [15:0]S,
+output Cout
+);
+wire [15:0] S0;
+wire [15:0] C;
+HSG uut(.A(A),.B(B),.S0(S0));
+CS_UNIT uut1(.A(A),.B(B),.C(C),.Cin(Cin));
+assign S[0] = S0[0] ^ Cin;
+assign S[1] = S0[1] ^ C[0];
+assign S[2] = S0[2] ^ C[1];
+assign S[3] = S0[3] ^ C[2];
+assign S[4] = S0[4] ^ C[3];
+assign S[5] = S0[5] ^ C[4];
+assign S[6] = S0[6] ^ C[5];
+assign S[7] = S0[7] ^ C[6];
+assign S[8] = S0[8] ^ C[7];
+assign S[9] = S0[9] ^ C[8];
+assign S[10] = S0[10] ^ C[9];
+assign S[11] = S0[11] ^ C[10];
+assign S[12] = S0[12] ^ C[11];
+assign S[13] = S0[13] ^ C[12];
+assign S[14] = S0[14] ^ C[13];
+assign S[15] = S0[15] ^ C[14];
+assign Cout=C[15];
+endmodule
