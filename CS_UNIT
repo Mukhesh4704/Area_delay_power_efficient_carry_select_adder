@@ -1,0 +1,26 @@
+module CS_UNIT(
+input [15:0]A,
+input [15:0]B,
+input Cin,
+wire [15:0] C01, C11,
+output [15:0] C
+);
+CG0_UNIT uut(.A(A),.B(B),.C01(C01));
+CG1_UNIT uut1(.A(A),.B(B),.C11(C11));
+assign C[0] = (Cin == 1'b0) ? C01[0] : C11[0];
+assign C[1] = (Cin == 1'b0) ? C01[1] : C11[1];
+assign C[2] = (Cin == 1'b0) ? C01[2] : C11[2];
+assign C[3] = (Cin == 1'b0) ? C01[3] : C11[3];
+assign C[4] = (Cin == 1'b0) ? C01[4] : C11[4];
+assign C[5] = (Cin == 1'b0) ? C01[5] : C11[5];
+assign C[6] = (Cin == 1'b0) ? C01[6] : C11[6];
+assign C[7] = (Cin == 1'b0) ? C01[7] : C11[7];
+assign C[8] = (Cin == 1'b0) ? C01[8] : C11[8];
+assign C[9] = (Cin == 1'b0) ? C01[9] : C11[9];
+assign C[10] = (Cin == 1'b0) ? C01[10] : C11[10];
+assign C[11] = (Cin == 1'b0) ? C01[11] : C11[11];
+assign C[12] = (Cin == 1'b0) ? C01[12] : C11[12];
+assign C[13] = (Cin == 1'b0) ? C01[13] : C11[13];
+assign C[14] = (Cin == 1'b0) ? C01[14] : C11[14];
+assign C[15] = (Cin == 1'b0) ? C01[15] : C11[15];
+endmodule
