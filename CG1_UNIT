@@ -1,0 +1,25 @@
+module CG1_UNIT(
+input [15:0]A,
+input [15:0]B,
+wire [15:0]S0,
+wire[15:0]C0,
+output [15:0]C11
+);
+HSG uut(.A(A),.B(B),.C0(C0),.S0(S0));
+assign C11[0] = C0[0]|S0[0];
+assign C11[1] = C11[0] & S0[1] | C0[1];
+assign C11[2] = C11[1] & S0[2] | C0[2];
+assign C11[3] = C11[2] & S0[3] | C0[3];
+assign C11[4] = C11[3] & S0[4] | C0[4];
+assign C11[5] = C11[4] & S0[5] | C0[5];
+assign C11[6] = C11[5] & S0[6] | C0[6];
+assign C11[7] = C11[6] & S0[7] | C0[7];
+assign C11[8] = C11[7] & S0[8] | C0[8];
+assign C11[9] = C11[8] & S0[9] | C0[9];
+assign C11[10] = C11[9] & S0[10] | C0[10];
+assign C11[11] = C11[10] & S0[11] | C0[11];
+assign C11[12] = C11[11] & S0[12] | C0[12];
+assign C11[13] = C11[12] & S0[13] | C0[13];
+assign C11[14] = C11[13] & S0[14] | C0[14];
+assign C11[15] = C11[14] & S0[15] | C0[15];
+endmodule
